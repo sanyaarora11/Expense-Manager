@@ -13,9 +13,8 @@ Backend: Node.js, Express
 Database: MongoDB Atlas
 
 ## AI (Planned Features)
-- Automatic expense categorization
-- Spending insights using AI
-- Smart expense summaries
+The project includes an AI parsing endpoint designed for natural language expense input.
+Currently uses rule-based parsing for demonstration; can be upgraded to live LLM inference
 
 ## What I Learned
 - Building REST APIs using Express
