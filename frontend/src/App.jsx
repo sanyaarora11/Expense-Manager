@@ -82,7 +82,9 @@ function App() {
         <h2>Your Expenses</h2>
 
         {expenses.length === 0 ? (
-          <p>No expenses yet</p>
+          <p style={{ textAlign: "center", color: "#777" }}>
+  No expenses added yet.
+</p>
         ) : (
           <ul className="expense-list">
             {expenses.map((exp) => (

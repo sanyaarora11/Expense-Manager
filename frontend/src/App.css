@@ -1,65 +1,94 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: "Inter", system-ui, sans-serif;
-  background-color: #f5f7fb;
-}
-
-.app-container {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 30px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
-
-h1 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-input, button, select {
-  font-size: 1rem;
-  padding: 10px;
+  font-family: Inter, system-ui, sans-serif;
+  background: #f5f7fb;
+  margin: 0;
 }
 
 .page {
-  background: #f5f7fb;
   min-height: 100vh;
-  padding: 40px;
+  padding: 40px 20px;
 }
 
 .header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.4rem;
+}
+
+.header p {
+  color: #666;
 }
 
 .main {
   max-width: 900px;
   margin: auto;
+  display: grid;
+  gap: 30px;
 }
 
 .card {
   background: white;
   padding: 25px;
-  border-radius: 12px;
-  margin-bottom: 25px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+form {
+  display: grid;
+  gap: 15px;
+}
+
+input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+button {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #4338ca;
 }
 
 .expense-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.expense-item {
+.expense-list li {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 12px 0;
   border-bottom: 1px solid #eee;
 }
 
-.expense-item button {
-  margin-left: 10px;
+.expense-list li:last-child {
+  border-bottom: none;
+}
+
+.expense-list button {
+  background: transparent;
+  color: red;
+  font-size: 1.2rem;
   cursor: pointer;
 }
 
