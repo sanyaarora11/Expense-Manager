@@ -8,7 +8,7 @@ function App() {
   const [description, setDescription] = useState("");
 
   const fetchExpenses = async () => {
-    const res = await fetch("http://localhost:5000/expenses");
+    const res = await fetch("https://expense-manager-production-72cf.up.railway.app/expenses");
     const data = await res.json();
     setExpenses(data);
   };
@@ -20,7 +20,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await fetch("http://localhost:5000/expenses", {
+    await fetch("https://expense-manager-production-72cf.up.railway.app/expenses", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ amount, category, description }),
@@ -33,7 +33,7 @@ function App() {
   };
 
   const deleteExpense = async (id) => {
-    await fetch(`http://localhost:5000/expenses/${id}`, {
+    await fetch(`https://expense-manager-production-72cf.up.railway.app/expenses/${id}`, {
       method: "DELETE",
     });
     fetchExpenses();
