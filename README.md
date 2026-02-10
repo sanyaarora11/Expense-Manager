@@ -38,8 +38,6 @@ Deployment:
  Frontend: Vercel
  Backend: Railway
 
- 
-
 ## AI (Planned Features)
 The project includes an AI parsing endpoint designed for natural language expense input.
 Currently uses rule-based parsing for demonstration; can be upgraded to live LLM inference
