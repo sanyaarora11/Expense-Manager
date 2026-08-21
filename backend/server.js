@@ -1,15 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 require("dotenv").config();
-
-const corsOptions = {
-  origin: "https://expense-manager-three-alpha.vercel.app",
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type"],
-};
-
-app.use(cors(corsOptions));
-app.options("*", cors(corsOptions)); // explicitly handle preflight requests
 
 const OpenAI = require("openai");
 
@@ -25,8 +17,15 @@ if (process.env.OPENAI_API_KEY) {
 
 const app = express();
 
-// Middleware
-app.use(cors());
+// CORS configuration
+const corsOptions = {
+  origin: "https://expense-manager-three-alpha.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type"],
+};
+
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 app.use(express.json());
 
 // MongoDB connection
@@ -73,7 +72,7 @@ app.post("/expenses", async (req, res) => {
   res.json(newExpense);
 });
 
-// DELETE expense ✅
+// DELETE expense
 app.delete("/expenses/:id", async (req, res) => {
   try {
     await Expense.findByIdAndDelete(req.params.id);
@@ -104,7 +103,6 @@ app.post("/ai/parse-expense", (req, res) => {
     description: text,
   });
 });
-
 
 // Start server
 const PORT = process.env.PORT || 5000;
