@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
+const API_URL = "https://sanya-xmhaccod.b4a.run";
+
 function App() {
   const [expenses, setExpenses] = useState([]);
   const [amount, setAmount] = useState("");
@@ -8,7 +10,7 @@ function App() {
   const [description, setDescription] = useState("");
 
   const fetchExpenses = async () => {
-    const res = await fetch("https://expense-manager-production-72cf.up.railway.app/expenses");
+    const res = await fetch(`${API_URL}/expenses`);
     const data = await res.json();
     setExpenses(data);
   };
@@ -20,7 +22,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await fetch("https://expense-manager-production-72cf.up.railway.app/expenses", {
+    await fetch(`${API_URL}/expenses`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ amount, category, description }),
@@ -33,7 +35,7 @@ function App() {
   };
 
   const deleteExpense = async (id) => {
-    await fetch(`https://expense-manager-production-72cf.up.railway.app/expenses/${id}`, {
+    await fetch(`${API_URL}/expenses/${id}`, {
       method: "DELETE",
     });
     fetchExpenses();
