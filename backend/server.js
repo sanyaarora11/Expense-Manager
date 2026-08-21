@@ -1,7 +1,15 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const cors = require("cors");
 require("dotenv").config();
+
+const corsOptions = {
+  origin: "https://expense-manager-three-alpha.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type"],
+};
+
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions)); // explicitly handle preflight requests
 
 const OpenAI = require("openai");
 
