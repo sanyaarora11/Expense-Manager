@@ -1,16 +1,42 @@
 # Expense-Manager
-A full-stack web application to track daily expenses using React, Node.js, Express, and MongoDB
+A full-stack expense tracking web application that allows users to add, view, and delete expenses with real-time updates.
+Includes an AI-style natural language input feature for quick expense entry.
+
+🔗 Live Demo
+Frontend:https://expense-manager-three-alpha.vercel.app/
+
+Backend API:https://expense-manager-production-72cf.up.railway.app/expenses
 
 ## Features
-- Add expenses with amount, category, and description
-- View all expenses in real time
-- Delete expenses
-- Full-stack integration with MongoDB Atlas
+Add, view and delete expenses
+
+Real-time updates
+
+Clean responsive UI
+
+REST API backend
+
+MongoDB cloud database
+
+AI-style expense parsing (mocked for now)
+
+Fully deployed (Vercel + Railway)
 
 ## Tech Stack
-Frontend: React, HTML, CSS  
-Backend: Node.js, Express  
-Database: MongoDB Atlas
+Frontend:
+ React (Vite)
+ CSS
+
+Backend:
+ Node.js
+ Express.js
+
+Database:
+ MongoDB Atlas
+
+Deployment:
+ Frontend: Vercel
+ Backend: Railway
 
 ## AI (Planned Features)
 The project includes an AI parsing endpoint designed for natural language expense input.
